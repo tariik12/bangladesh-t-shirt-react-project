@@ -5,6 +5,7 @@ import TShirt from '../../TShirt/TShirt';
 import Cart from '../Cart/Cart';
 import './Home.css'
 import { ToastContainer, toast } from 'react-toastify';
+import Card from '../Card/Card';
 
 
 
@@ -47,7 +48,7 @@ const Home = () => {
           }
           </div>
           <div className='cart-container'>
-          <Cart 
+          <Card 
           cart ={cart}
           handleRemoveCart={handleRemoveCart}
           />

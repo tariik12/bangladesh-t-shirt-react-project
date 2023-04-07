@@ -1,7 +1,7 @@
 import React from 'react';
-import './cart.css'
+import './Card.css';
 
-const Cart = ({cart,handleRemoveCart}) => {
+const Card = ({cart,handleRemoveCart}) => {
     let  message;
     if(cart.length === 0){
         message = <p>Please add some any product</p>
@@ -14,24 +14,31 @@ const Cart = ({cart,handleRemoveCart}) => {
     }
     return (
         <div>
-            <h5 className={cart.length === 1 ? 'blue' : 'red'}>Order Summary {cart.length}</h5>
-            {cart.length> 2 ? <span className='purple'>Aro kino</span> : <span>Fokira</span>}
-                {message}
+            <div className='card'>
+            <h5 className={cart.length === 1 ? 'red' : 'blue'} >Order Summary {cart.length}</h5>
+            <p className={`bold bordered ${cart.length===3? 'yellow': 'card'}`}>something wrong</p>
+            {cart.length === 2 ?
+             <span className='card'>Aro kino</span> :
+              <span>Fokira</span>}
+            {message}
             {
             cart.map(tshirt =><p key={tshirt._id}>{tshirt.name} <button onClick={() =>handleRemoveCart(tshirt._id)}>X</button></p>)
         }
+
         {
             cart.length === 2 && <p>Double bonanza!!!</p>
         }
         {
             cart.length === 3 || <h3>Tinta to hoilona</h3>
         }
+       
         </div>
        
+        </div>
     );
 };
 
-export default Cart;
+export default Card;
 
 /**
  * conditional rendering
@@ -43,4 +50,6 @@ export default Cart;
 
 /**
  * conditional css class
+ * 1. use ternary
+ * 2. ternary template string
  */
