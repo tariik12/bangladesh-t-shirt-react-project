@@ -27,7 +27,6 @@ const Cart = ({cart,handleRemoveCart}) => {
             cart.length === 3 || <h3>Tinta to hoilona</h3>
         }
         </div>
-       
     );
 };
 
